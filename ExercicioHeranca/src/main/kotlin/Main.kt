@@ -25,7 +25,6 @@ fun main(args: Array<String>) {
     var Pure = SalesManager("filetar", 40, 5, 220, 30, 1000.0,200.0, 6000.0)
 
     filetar.calcularComissaoGerente()
-
-
+    filetar.addRepVendas()
 
 }

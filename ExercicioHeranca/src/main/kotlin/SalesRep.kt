@@ -11,13 +11,4 @@ open class SalesRep (primeiroNome: String, idade: Int, anosTrabalhados: Int, dia
         return 0
     }
 
-    companion object teste
-    {
-        fun teste (vendasFeitas: Double, primeiroNome: String)
-        {
-            var saveVendas = vendasFeitas
-            var nome = mutableListOf(primeiroNome)
-        }
-    }
-
 }

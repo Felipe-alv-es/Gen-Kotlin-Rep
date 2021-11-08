@@ -3,28 +3,33 @@ class SalesManager (primeiroNome: String, idade: Int, anosTrabalhados: Int, dias
     SalesRep(primeiroNome, idade, anosTrabalhados, diasTrabalhados, diasDeFerias, salario, vendasFeitas )
 {
 
-    val vendasTime = HashMap<Int, SalesRep.teste>()
+    val vendasTime = HashMap<Int, SalesRep>()
     var comissaoGestor: Double = 0.0
+    var numVendas = 0.0
 
-    /*
+    fun addRepVendas (repVendas: SalesRep)
+    {
+        vendasTime.put(repVendas.registro, repVendas)
+
+    }
+
     fun calcularComissaoGerente()
     {
-        comissaoGestor = 0.03 * totalVendas
-        println(map)
-        return println("O gestor recebera $comissaoGestor de comissão")
-    }
-    */
+       if (vendasTime.isEmpty())
+       {
+           println("Não há representantes de vendas")
+       }
+        else
+       {
+           for (item in vendasTime)
+           {
+               numVendas += item.value.vendasFeitas
+           }
 
-    fun calcularComissaoGerente ()
-    {
-          //vendasTime.put(1, vendasFeitas)
-        for (i in 1..10)
-        {
-            vendasTime.put(i, SalesRep.teste)
-            println(vendasTime.size)
-            vendasTime.forEach(System.out::println)
-        }
+        comissaoGestor = 0.03 * numVendas
 
+        println("A comissão geral com é de $comissaoGestor")
+       }
     }
 
 }
