@@ -1,0 +1,1 @@
+C:\Users\felip\IdeaProjects\testeUnitario\build\classes\kotlin\main\MainKt.class;C:\Users\felip\IdeaProjects\testeUnitario\build\classes\kotlin\main\Soma.class;C:\Users\felip\IdeaProjects\testeUnitario\build\classes\kotlin\main\Usuario.class
