@@ -1,3 +1,4 @@
+import model.Student
 import utils.PrinterHelper.showMainMenu
 import utils.PrinterHelper.createStudentMenu
 import kotlin.Throws
@@ -11,6 +12,7 @@ object Main {
     @Throws(ParseException::class)
     @JvmStatic
     fun main(args: Array<String>) {
+
         val studentService = StudentService()
         val courseService = CourseService()
         val scanner = Scanner(System.`in`)
@@ -30,8 +32,8 @@ object Main {
 
     private fun enrollStudentToCourse(
         studentService: StudentService, courseService: CourseService,
-        scanner: Scanner
-    ) {
+        scanner: Scanner)
+    {
         println("Insert student ID")
         val studentId = scanner.next()
         val student = studentService.findStudent(studentId)

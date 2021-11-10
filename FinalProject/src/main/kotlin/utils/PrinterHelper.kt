@@ -2,9 +2,11 @@ package utils
 
 import kotlin.Throws
 import model.Student
+import java.lang.NullPointerException
 import java.text.DateFormat
 import java.text.ParseException
 import java.text.SimpleDateFormat
+import java.time.LocalDate
 import java.util.*
 
 object PrinterHelper {
@@ -26,6 +28,9 @@ object PrinterHelper {
     @JvmStatic
     @Throws(ParseException::class)
     fun createStudentMenu(scanner: Scanner): Student {
+
+
+        try {
         println("|-------------------------------------|")
         println("| . 1 Register Student                |")
         println("|-------------------------------------|")
@@ -35,14 +40,34 @@ object PrinterHelper {
         val id = scanner.next()
         println("| Enter student email:                |")
         val email = scanner.next()
-        println("| Enter student birth date(mm/dd/yyyy)|")
-        val formatter: DateFormat = SimpleDateFormat("mm/dd/yyyy")
-        //TODO validate date format and catch exception to avoid crash
+
+
+            println("| Enter student birth date(mm/dd/yyyy)|")
+            val formatter: DateFormat = SimpleDateFormat("mm/dd/yyyy")
+
+
+
         val birthDate = formatter.parse(scanner.next())
+
         println("|-------------------------------------|")
         val student = Student(id, name, email, birthDate)
+
         println("Student Successfully Registered! ")
         println(student)
+        return student
+
+
+        }catch (e: Exception)
+        {
+            println("A data digitada não está conforme o padrão MM/DD/YYYY")
+        }
+
+        var name = ""
+        var id = ""
+        var email = ""
+        var birthDate = null
+        val student = Student(id, name, email, birthDate)
+
         return student
     }
 }
